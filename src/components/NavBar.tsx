@@ -82,6 +82,9 @@ export default function NavBar({
             </React.Fragment>
           ))}
           <li>
+           {/* CTA Link value:
+            * mailto:danielenagu@gmail.com?Subject=
+            */}
             <Button
               linkField={settings.data.cta_link}
               label={settings.data.cta_label}
