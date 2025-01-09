@@ -32,6 +32,14 @@
             "label": "Tag Line",
             "placeholder": ""
           }
+        },
+        "avatar": {
+          "type": "Image",
+          "config": {
+            "label": "Avatar",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}
