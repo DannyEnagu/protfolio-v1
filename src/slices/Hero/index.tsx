@@ -73,7 +73,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       ref={components}
     >
       <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center place-items-center gap-8 md:gap-0">
-        <Avatar image={slice.primary.avatar} className="max-w-sm md:ml-auto flex justify-center h-auto" />
+        <Avatar image={slice.primary.avatar} className="max-w-sm md:ml-auto flex justify-center" />
         <div className="col-start-1 md:row-start-1">
           <h1 className="mb-8 text-[clamp(3rem,17vmin,20rem)] font-extrabold leading-none tracking-tighter" aria-label={slice.primary.first_name + " " + slice.primary.last_name}>
             <span className="block text-slate-300">{renderLetters(slice.primary.first_name, 'first')}</span>
