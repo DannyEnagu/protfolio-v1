@@ -5,6 +5,7 @@ import React from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { PrismicNextLink } from "@prismicio/next";
 
 interface ContentListProps {
     items: Content.BlogPostDocument[] | Content.ProjectDocument[];
@@ -135,24 +136,28 @@ export default function ContentList({
                         itemsRef.current[index] = element;
                     }}
                 >
-                    <Link
-                    href={urlPrefix + '/' + item.uid}
+                    <PrismicNextLink
+                     field={item.data.url}
                     className="flex flex-col gap-3 border-t border-t-slate-200 py-10 text-slate-200 md:flex-row"
                     aria-label={item.data.title}
                     >
                         <div className="flex flex-col">
                             <span className="text-3xl font-bold">{item.data.title}</span>
+                            <p className="my-3">
+                                <span>{item.data.summary}</span>
+                                {" "}
+                                <span className="inline-flex items-center gap-2 text-sm text-yellow-400">
+                                    {viewMoreText}
+                                    <MdArrowOutward />
+                                </span>
+                            </p>
                             <div className="flex gap-3 text-yellow-400 text-lg font-bold">
                                 {item.tags.map((tag, index) => (
                                     <span key={index}>{tag}</span>
                                 ))}
                             </div>
                         </div>
-                        <span className="flex items-center gap-2 text-xl font-medium md:ml-auto">
-                            {viewMoreText}
-                            <MdArrowOutward />
-                        </span>
-                    </Link>
+                    </PrismicNextLink>
                 </li>
             )}
             </React.Fragment>
