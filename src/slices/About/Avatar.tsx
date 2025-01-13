@@ -54,13 +54,12 @@ export default function Avatar({image, className}: AvatarProps) {
     }, [prefersReducedMotion]);
     
     return (
-        <div ref={component} className={clsx("relative h-full w-full", className)}>
+        <div ref={component} className={clsx("relative w-full", className)}>
             <div className="avatar aspect-square overflow-hidden rounded-3xl border-2 border-slate-700 opacity-0">
                 <PrismicNextImage
                     field={image}
-                    className="avatar-image h-full w-full object-fill"
+                    className="avatar-image h-full w-full object-fill'"
                     imgixParams={{ q: 90 }}
-                    alt=""
                 />
                 <div className="highlight absolute inset-0 hidden w-full scale-110 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block" />
             </div>
